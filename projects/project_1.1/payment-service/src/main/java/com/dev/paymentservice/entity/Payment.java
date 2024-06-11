@@ -1,4 +1,4 @@
-package com.dev.orderservice.entity;
+package com.dev.paymentservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,17 +7,15 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "order_table")
+@Table(name = "payment_table")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Order {
-
+public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String name;
-    private int qty;
-    private double price;
+    private int paymentId;
+    private String paymentStatus;
+    private String transactionId;
 }
