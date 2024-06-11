@@ -4,4 +4,5 @@ import com.dev.paymentservice.entity.Payment;
 
 public interface PaymentService {
     Payment doPayment(Payment payment);
+    String generateRandomPaymentStatus();
 }

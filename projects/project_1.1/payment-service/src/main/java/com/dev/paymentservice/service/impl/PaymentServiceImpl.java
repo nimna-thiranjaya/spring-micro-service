@@ -15,7 +15,13 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment doPayment(Payment payment) {
+        payment.setPaymentStatus(generateRandomPaymentStatus());
         payment.setTransactionId(UUID.randomUUID().toString());
         return paymentRepository.save(payment);
+    }
+
+    @Override
+    public String generateRandomPaymentStatus() {
+        return Math.random() < 0.5 ? "success" : "failure";
     }
 }

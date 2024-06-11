@@ -18,4 +18,5 @@ public class PaymentController {
     public Payment doPayment(@RequestBody Payment payment) {
         return paymentService.doPayment(payment);
     }
+
 }
