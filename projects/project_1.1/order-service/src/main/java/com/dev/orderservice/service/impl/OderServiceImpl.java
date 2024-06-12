@@ -28,7 +28,7 @@ public class OderServiceImpl implements OrderService {
         payment.setOrderId(createdOrder.getId());
         payment.setAmount(createdOrder.getPrice());
 
-        Payment createdPayment = restTemplate.postForObject("http://localhost:9191/payment/doPayment", payment, Payment.class);
+        Payment createdPayment = restTemplate.postForObject("http://PAYMENT-SERVICE/payment/doPayment", payment, Payment.class);
 
         if(createdPayment != null && createdPayment.getPaymentStatus().equals("success")) {
             response = "Payment processing successful and order placed";
