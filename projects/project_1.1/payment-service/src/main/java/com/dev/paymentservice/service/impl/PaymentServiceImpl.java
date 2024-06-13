@@ -24,4 +24,9 @@ public class PaymentServiceImpl implements PaymentService {
     public String generateRandomPaymentStatus() {
         return Math.random() < 0.5 ? "success" : "failure";
     }
+
+    @Override
+    public Payment findPaymentHistoryByOrderId(int orderId) {
+        return paymentRepository.findByOrderId(orderId);
+    }
 }
